@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'all.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'sidebar.min.css' %}">
+        <title>
+        LOAD -
+        {% block title_block %}
+
+        {% endblock %}
+    </title>
+</head>
+<body class="questions-page new-topbar">
+    <div class="topbar">
+        <div class="topbar-wrapper">
+            <div class="topbar-links">
+                <div class="links-container">
+                    <!-- Menu links -->
+                <span class="topbar-menu-links">
+                <a href="index">Головна</a>
+                      <a href="flood">Flood</a>
+                     <a href="chart1">Info</a>
+                        <a href="" class="icon-help js-help-button" title="Help Center and other resources">help</a>
+                    </span>
+                    <!-- Menu links end -->
+                </div>
+
+{#                <!-- Search form -->#}
+{#                <div class="search-container">#}
+{#                    <form id="search" action="" method="get" autocomplete="off">#}
+{#                        <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240" />#}
+{#                    </form>#}
+{#                <!-- Search form end -->#}
+{#                </div>#}
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+{#        <div id="header">#}
+{#            <br class="cbt">#}
+{#            <div id="hlogo">#}
+{#                <!-- Home link --><a href="index">Stack Overflow</a><!-- Home link end -->#}
+{#            </div>#}
+{#            <div id="hmenus">#}
+{#                <div class="nav mainnavs">#}
+{#                    <ul>#}
+{#                        <!-- Additional links -->#}
+{##}
+{##}
+{#                        <!-- Additional links end -->#}
+{#                    </ul>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+
+        <div id="content" class="snippet-hidden">
+            <!-- Main content >>>>>>>>>>>>>>>>>>>>>>HERE<<<<<<<<<<<<<<<<<<<<<<<<< -->
+            {% block main_content %}
+            {% endblock %}
+            <!-- End -->
+        </div>
+    </div>
+    </body>
+</html>
+
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>#}
+{#        KPI QnA -#}
+{#        {% block title_block %}#}
+{##}
+{#        {% endblock %}#}
+{#    </title>#}
+{#</head>#}
+{#<body>#}
+{#<a href="index">Головна</a> | {% if user.is_authenticated %}#}
+{#                                    <a href="add">Запитати</a> |#}
+{#                                    {% endif %}#}
+{#                                    <a href="search"> Пошук</a>  |#}
+{#                                    <a href="chart1">Інфографіка</a>      |                  {% if user.is_authenticated %}#}
+{#                                                                                            <a href="logout">Вихід</a>#}
+{#                                                                                            {% else %}#}
+{#                                                                                                <a href="login">Вхід</a> |#}
+{#                                                                                                <a href="register">Реєстрація</a>#}
+{#                                                                                            {% endif %} |#}
+{#<p></p>#}
+{#{% block main_content %}#}
+{#{% endblock %}#}
+{##}
+{#</body>#}
+{#</html>#}

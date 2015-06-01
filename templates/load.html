@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title_block %}
+
+{% endblock %}
+
+{% block main_content %}
+   <form id="login_form" method="post" action="load"> {% csrf_token %}
+
+           <div id="mainbar-full" class="login-page" data-login="true">
+    <div>
+
+            <div id="se-login" class="preferred-login" style="overflow: hidden; height: 157px; width: 258px;">
+                <!-- Type link in "action" --><form id="se-login-form" action="load" method="POST">
+                    <div class="form-bottom">
+                       <div><input name="id db" placeholder="id" type="text" size="15" maxlength="100"> </div>
+          <div> <input name="engine" placeholder="engine" type="text" size="15" maxlength="100"> </div>
+         <div> <input name="name" placeholder="name" type="text" size="15" maxlength="100"></div>
+          <div> <input name="user" placeholder="user" type="text" size="15" maxlength="100"></div>
+         <div> <input name="pass" placeholder="password" type="password" size="15" maxlength="100"></div>
+         <div> <input name="host" placeholder="host" type="text" size="15" maxlength="100"></div>
+          <div><input name="port" placeholder="port" type="text" size="15" maxlength="100"></div>
+      <div ><input id="submit-button" name="submit-button" type="submit" value="Add"></div>
+                    </div>
+                </form>
+            </div>
+
+
+    </div>
+</div>
+        </form>
+{% endblock %}

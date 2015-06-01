@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title_block %}
+{% endblock %}
+
+{% block main_content %}
+
+      <form  method="POST" action = "flood">{% csrf_token %}
+          <input type="number" name="count">
+          <input type="submit" name="Q_FIRE">
+      </form>
+{% endblock %}

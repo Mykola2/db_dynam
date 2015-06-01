@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title_block %}
+- Інфографіка
+{% endblock %}
+
+{% block main_content %}
+
+
+    <div class="subheader">
+                    <h1 id="h-all-questions">Add</h1>
+                </div>
+<div id="tagchart"></div>
+
+    <div class="subheader">
+                    <h1 id="h-all-questions">Read</h1>
+                </div>
+<div id="selinfo"></div>
+
+    <div class="subheader">
+                    <h1 id="h-all-questions">Update</h1>
+                </div>
+<div id="updinfo"></div>
+
+    <div class="subheader">
+                    <h1 id="h-all-questions">Delete</h1>
+                </div>
+<div id="delinfo"></div>
+
+    <div class="subheader">
+                    <h1 id="h-all-questions">Join</h1>
+                </div>
+<div id="joininfo"></div>
+{% load googlecharts %}
+{% googlecharts %}
+
+    {%  data taginfo "info2"%}
+        {% col "string" "Name"%}'{{ val }}' {% endcol %}
+        {% col "number" "Count"%}{{ val }} {% endcol %}
+    {% enddata %}
+
+    {%  data selinfo "info3"%}
+        {% col "string" "Name"%}'{{ val }}' {% endcol %}
+        {% col "number" "Count"%}{{ val }} {% endcol %}
+    {% enddata %}
+
+    {%  data updinfo "info4"%}
+        {% col "string" "Name"%}'{{ val }}' {% endcol %}
+        {% col "number" "Count"%}{{ val }} {% endcol %}
+    {% enddata %}
+
+    {%  data delinfo "info5"%}
+        {% col "string" "Name"%}'{{ val }}' {% endcol %}
+        {% col "number" "Count"%}{{ val }} {% endcol %}
+    {% enddata %}
+    {%  data delinfo "info6"%}
+        {% col "string" "Name"%}'{{ val }}' {% endcol %}
+        {% col "number" "Count"%}{{ val }} {% endcol %}
+    {% enddata %}
+
+    {% options "pie"%}
+        kind : "PieChart"
+    {% endoptions %}
+
+    {% options "col"%}
+        kind : "ColumnChart"
+    {% endoptions %}
+
+
+
+    {% graph "tagchart" "info2" "col"%}
+
+    {% graph "selinfo" "info3" "col"%}
+
+    {% graph "updinfo" "info4" "col"%}
+
+    {% graph "delinfo" "info5" "col"%}
+
+    {% graph "joininfo" "info6" "col"%}
+{% endgooglecharts %}
+{% endblock %}
